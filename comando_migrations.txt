@@ -1,0 +1,67 @@
+objetivo: aprender migração e seeders
+
+npm install pg
+npm install sqlite3 migrations and seeds Ok
+npm install mysql2 migrations and seeds Ok
+
+1- cria-se o arquivo de configuração knexfile.js com o comando 'knex init'
+
+    apos configurado
+
+2- cria-se o arquivo de migração com o comando "knex migrate:make 'nome_da_migação'"
+
+    apos configurado
+
+3- faz a migração do arquivo mais recente com 'knex migrate:latest'
+
+    ou para desfazer a migração
+
+4- faz o downgrad com 'knex migrate:down'
+
+
+criando seed
+
+1- criando knex seed:make 'nome_da_seed'
+
+2- rodando a seed com knex seed:run
+
+//importante, use .env para manter chaves seguras
+
+npm install dotenv --save
+
+require('dotenv').config()
+
+//rodando uma seed especifica
+
+knex seed:run --specific nome_da_seed.js
+
+//para resetar uma migration
+
+knex migrate:rollback --all  
+
+conceitos aprendidos
+
+//create and config ./src/database/index.js
+//login to local postgres psql -U postgres
+//create user migration knex migrate:make migrations_name
+//create user seed knex seed:make seed_name
+//run migration and seeds knex migrate:latest ou seed:run
+//usando o knex
+//select
+//insert
+//update
+//delete
+//add error handling
+//separar rotas e criar controllers
+//crete projects table(relacionamento com users)
+//criar migration e seed
+//join user projects - unir user a projects
+//paginação de projetos
+//soft delete(user) - manter dados msm apagados
+//procedures & triggers(updated_at)
+
+
+defafios
+
+//criar o restante do crud dos projects (ok)
+//conhecer e estudar uma orm como o sequelize (em andamento)
